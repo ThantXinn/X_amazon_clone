@@ -5,10 +5,7 @@ import Image from "next/image";
 import { FaHeart, FaStar } from "react-icons/fa";
 import { IoLogoUsd } from "react-icons/io";
 
-interface Props{
-    productData: Products[]
-}
-const Product = ({ productData }: Props) => {
+const Product = ({ productData }: any) => {
     const dispatch = useAppDispatch();
 
     return (
@@ -21,7 +18,7 @@ const Product = ({ productData }: Props) => {
             </div>
             <div className="w-full px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {
-                productData.map(({id,title,price,description,category,image,rating}) => (
+                productData.map(({id,title,price,description,category,image,rating}:Products) => (
                     <div key={id} className="flex flex-col justify-center bg-white relative w-full text-black p-4 border rounded-sm group overflow-hidden cursor-pointer">
                         <div className="w-full h-[260px] max-lg:h-[180px] relative">
                             <div className="flex items-center gap-2 animate-pulse">

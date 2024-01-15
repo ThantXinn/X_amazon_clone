@@ -17,7 +17,7 @@ const PaymentForm = () => {
             amt += item.price * item.quantity
             return;
         });
-        setTotalAmount(amt);
+        setTotalAmount(Math.fround(amt));
     }, [productData])
     
     //stripe-payment
@@ -43,7 +43,6 @@ const PaymentForm = () => {
         }
     };
 
-
   return (
       <div className="flex flex-col gap-4">
           <div className="flex gap-4">
@@ -56,10 +55,10 @@ const PaymentForm = () => {
               </p>
           </div>
           <p className="font-bodyFont font-semibold text-lg flex items-center justify-between gap-3">
-              Total:<span className="flex items-center text-lg"><IoLogoUsd />{ totalAmount }</span>
+              Total:<span className="flex items-center text-lg"><IoLogoUsd />{ totalAmount.toFixed(2) }</span>
           </p>
           <div className="flex flex-col gap-2 items-center justify-center">
-              <button onClick={handleCheckOut} className={`shadow-lg w-1/2 h-10 text-sm font-semibold rounded-md ${userinfoData ? 'bg-amazon_button text-amazon_blue cursor-pointer hover:scale-95 transition-transform duration-200' : 'bg-amazon_blue bg-opacity-55 text-white cursor-not-allowed'}`}>Procceed to checkout</button>
+              <button onClick={handleCheckOut} className={`shadow-lg w-1/2 max-lg:w-2/3 h-10 text-sm font-semibold rounded-md ${userinfoData ? 'bg-amazon_button text-amazon_blue cursor-pointer hover:scale-95 transition-transform duration-200' : 'bg-amazon_blue bg-opacity-55 text-white cursor-not-allowed'}`}>Procceed to checkout</button>
               <button onClick={()=>signIn()} className={`text-center text-sm mt-2 text-red-600 font-semibold animate-bounce cursor-pointer ${userinfoData ? 'hidden' : 'flex'}`}>Please login to continue</button>
           </div>
     </div>

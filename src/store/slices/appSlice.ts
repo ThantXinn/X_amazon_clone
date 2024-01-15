@@ -19,12 +19,14 @@ export const appSlice = createSlice({
     initialState,
     reducers: {
         addtoCart: (state, action) => {
+
             const exitingProducts = state.productData.find((item: UpdateProductsQty) => item.id === action.payload.id)
             if (exitingProducts) {
                 exitingProducts.quantity += action.payload.quantity;
             }
             else {
                 state.productData.push(action.payload);
+                console.log(state.productData)
             }
         },
         addtoFavourite: (state, action) => {
@@ -50,8 +52,13 @@ export const appSlice = createSlice({
         deleteProduct: ( state,action) => {
             state.productData = state.productData.filter((item)=>item.id !== action.payload.id)
         },
+        deleteFavouriteProduct: ( state,action) => {
+            state.favouriteData = state.favouriteData.filter((item)=>item.id !== action.payload.id)
+        },
         resetCart: (state) => {
             state.productData = [];
+        },
+        resetFavourite: (state) => {
             state.favouriteData = [];
         },
         addUser: (state, action) => {
@@ -59,9 +66,12 @@ export const appSlice = createSlice({
         },
         removeUser: (state) => {
             state.userinfoData = null;
+        },
+        setAllProductData: (state, action) => {
+            state.allproductData = action.payload
         }
     }
 })
 
-export const { addtoCart,addtoFavourite,increaseQuantity,decreaseQuantity,deleteProduct,resetCart,addUser,removeUser } = appSlice.actions;
+export const { addtoCart,addtoFavourite,deleteFavouriteProduct,resetFavourite,increaseQuantity,decreaseQuantity,deleteProduct,resetCart,addUser,removeUser,setAllProductData } = appSlice.actions;
 export default appSlice.reducer;

@@ -8,7 +8,7 @@ const CartPage = () => {
   const { productData } = useAppSelector((state) => state.amazon_clone)
   
   return (
-    <div className="max-w-screen-2xl mx-auto px-10 grid grid-cols-5 gap-5 py-4">
+    <div className="max-w-screen-2xl min-h-screen mx-auto px-10 grid grid-cols-5 gap-5 py-4">
       {productData.length > 0 ?
         (
           <>

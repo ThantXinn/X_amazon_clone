@@ -72,7 +72,7 @@ const CardProduct = ({ item }: Props) => {
                 </div>
           </div>
           <div className="absolute flex text-amazon_blue font-semibold bottom-4 right-4 max-sm:bottom-6 max-sm:text-sm">
-              <p className="flex items-center gap-1"><span className="flex items-center font-semibold"><IoLogoUsd /></span>{item.price * item.quantity}</p>
+              <p className="flex items-center gap-1"><span className="flex items-center font-semibold"><IoLogoUsd /></span>{(item.price * item.quantity).toFixed(2)}</p>
           </div>
     </div>
   )

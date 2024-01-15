@@ -4,7 +4,7 @@ import { signOut } from "next-auth/react";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const SubHeader = () => {
-    const { userinfoData } = useAppSelector((state) => state.amazon_clone);
+    const { userinfoData,favouriteData } = useAppSelector((state) => state.amazon_clone);
     const dispatch = useAppDispatch();
     
   return (
@@ -33,7 +33,7 @@ const SubHeader = () => {
               <div className="flex px-3 h-10 items-center border border-transparent hover:border-white duration-200 cursor-pointer rounded-sm max-lg:px-1">
                   <p>Sell</p>
               </div>
-              <div className={`px-3 h-10 items-center border border-transparent hover:border-white duration-200 cursor-pointer rounded-sm max-lg:px-1 ${userinfoData ? 'flex' : 'hidden'}`}>
+              <div className={`text-amazon_yellow px-3 h-10 items-center border border-transparent hover:border-white duration-200 cursor-pointer rounded-sm max-lg:px-1 ${userinfoData ? 'flex' : 'hidden'}`}>
                   <button onClick={()=>{signOut(),dispatch(removeUser())}}>Sign Out</button>
               </div>
           </div>

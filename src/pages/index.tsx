@@ -1,14 +1,22 @@
 import Banner from '@/components/Banner';
 import Product from '@/components/Product';
+import { useAppDispatch } from '@/store/hooks';
+import { setAllProductData } from '@/store/slices/appSlice';
 import { Products } from '@/types';
+import { useEffect } from 'react';
 
 interface Props{
-  productData:Products[]
+  productData:Products
 }
-export default function Home({ productData }:Props) {
+export default function Home({ productData }: Props) {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(setAllProductData({productData}))
+  },[productData])
   return (
     <main>
-      <div className='max-w-screen-2xl mx-auto'>
+      <div className='max-w-screen-2xl mx-auto font-bodyFont'>
         <Banner />
         <div className="relative md:-mt-20 lg:-mt-32 xl:-mt-60 z-20 mb-10">
           <Product productData={productData} />
