@@ -1,4 +1,4 @@
-import { config } from "@/pages/config/config"
+import { config } from "@/config/config"
 import NextAuth from "next-auth"
 import GithubProvider from "next-auth/providers/github"
 import GoogleProvider from "next-auth/providers/google"

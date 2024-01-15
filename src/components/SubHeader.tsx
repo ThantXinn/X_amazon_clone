@@ -19,7 +19,7 @@ const SubHeader = () => {
           {/*Today's Deals*/}
           <div className="w-full h-full flex items-center text-sm max-lg:text-xs">
               <div className="flex px-3 h-10 items-center border border-transparent hover:border-white duration-200 cursor-pointer rounded-sm max-lg:px-1">
-                  <p>Today'sDeals</p>
+                  <p>Todays Deals</p>
               </div>
               <div className="flex px-3 h-10 items-center border border-transparent hover:border-white duration-200 cursor-pointer rounded-sm max-lg:px-1">
                   <p>Registry</p>

@@ -1,4 +1,4 @@
-import { config } from "@/pages/config/config";
+import { config } from "@/config/config";
 import { useAppSelector } from "@/store/hooks";
 import { loadStripe } from "@stripe/stripe-js";
 import { signIn, useSession } from "next-auth/react";

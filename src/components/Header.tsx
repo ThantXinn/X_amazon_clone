@@ -16,7 +16,7 @@ import SearchProductCard from "./SearchProduct";
 
 const Header = () => {
   const { data: session } = useSession()
-  const { productData, favouriteData, userinfoData,allproductData } = useAppSelector((state) => state.amazon_clone)
+  const { productData, favouriteData, userinfoData,allproductData } = useAppSelector((state:any) => state.amazon_clone)
   const [searchValue, setSearchValue] = useState("");
   const [allData, setAllData] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -37,7 +37,7 @@ const Header = () => {
   }, [allData])
   
   useEffect(() => {
-    const filtered = allData?.filter((item) => item.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()))
+    const filtered = allData?.filter((item:Products) => item.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()))
     setFilteredProducts(filtered)
 
   },[searchValue])
