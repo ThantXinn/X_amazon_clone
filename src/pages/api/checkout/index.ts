@@ -30,8 +30,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         },
         line_items: modified_items,
         mode: "payment",
-        success_url: `http://localhost:3000/success`,
-        cancel_url: `http://localhost:3000/cancel`,
+        success_url: `https://x-amazon-clone-e-commerce.vercel.app/success`,
+        cancel_url: `https://x-amazon-clone-e-commerce.vercel.app/cancel`,
         metadata: {
             email,
             images: JSON.stringify(items.map((item: any) => item.image))
