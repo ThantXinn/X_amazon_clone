@@ -21,7 +21,7 @@ const PaymentForm = () => {
     }, [productData])
     
     //stripe-payment
-    const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
+    const stripePromise = loadStripe(config.nextPublicStripePublishableKey!);
     const handleCheckOut = async () => {
         const stripe = await stripePromise;
         const res = await fetch(`${config.apiBaseUrl}/checkout`,

@@ -4,6 +4,8 @@ interface Config{
     googleClientSecret: string,
     githubId: string,
     githubSecret: string,
+    stripeSecretKey: string,
+    nextPublicStripePublishableKey: string
 }
 
 export const config: Config = {
@@ -12,4 +14,6 @@ export const config: Config = {
     googleClientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
     githubId: process.env.GITHUB_ID || "",
     githubSecret: process.env.GITHUB_SECRET || "",
+    stripeSecretKey: process.env.STRIPE_SECRET_KEY || "",
+    nextPublicStripePublishableKey: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || "",
 }

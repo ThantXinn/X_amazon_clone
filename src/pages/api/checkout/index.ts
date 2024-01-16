@@ -1,8 +1,9 @@
+import { config } from "@/config/config";
 import { UpdateProductsQty } from "@/types";
 import { NextApiRequest, NextApiResponse } from "next";
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+const stripe = new Stripe(config.stripeSecretKey!, {
   typescript: true,
   apiVersion: "2023-10-16",
 });
