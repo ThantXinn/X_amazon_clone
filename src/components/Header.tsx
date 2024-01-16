@@ -131,7 +131,7 @@ const Header = () => {
                       <span>
                       Favourite
                       </span>
-                      <span className="font-semibold">Items: <span className={`text-amazon_yellow font-bold text-lg max-lg:text-xs ${favouriteData.length > 0 ? 'animate-pulse' : "animate-none"}`} >{favouriteData && userinfoData ? favouriteData.length : 0}
+                      <span className="font-semibold">Items: <span className={`text-amazon_yellow font-bold text-lg max-lg:text-xs ${favouriteData.length > 0 ? 'animate-pulse' : "animate-none"}`} >{favouriteData ? favouriteData.length : 0}
                       </span>
                       </span>
                       </Link>
@@ -173,8 +173,8 @@ const Header = () => {
               {/*cart_icon*/}
               <Link href={"/cart"} className="px-1 border border-transparent hover:border-white duration-200 flex items-center h-[70%] cursor-pointer text-white relative">
                 <Image className="flex w-10 h-6 object-cover rounded-sm" src={cart_icon} alt="amazon logo"/>
-                      <p className="mt-4 font-bodyFont font-bold text-sm max-lg:text-xs">Cart
-            <span className="absolute top-0 max-lg:-top-1 left-[29.5%] max-lg:left-[32%] text-amazon_yellow font-bold text-lg max-lg:text-sm">{ productData ? productData.length : 0}</span>
+                  <p className="mt-4 font-bodyFont font-bold text-sm max-lg:text-xs">Cart
+                  <span className="absolute top-0 max-lg:-top-1 left-[29.5%] max-lg:left-[32%] text-amazon_yellow font-bold text-lg max-lg:text-sm">{ productData ? productData.length : 0}</span>
                       </p>
               </Link>
           </div>
