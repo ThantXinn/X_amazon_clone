@@ -198,7 +198,7 @@ const Header = () => {
               <div
                 onMouseEnter={() => setHide(false)}
                 onMouseLeave={() => setHide(true)}
-                className='flex w-1/5 h-1/5 rounded-md flex-col items-center justify-center bg-slate-50 absolute right-[10%] gap-2'>
+                className='flex w-1/5 h-1/5 max-md:w-[50%] rounded-md flex-col items-center justify-center bg-slate-50 absolute right-[10%] gap-2'>
                 <button
                   className='w-3/4 h-10 rounded-md bg-amazon_button hover:scale-95 duration-200 transition'
                   onClick={() => {
