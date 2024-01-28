@@ -15,7 +15,7 @@ import appReducer from './slices/appSlice'
 const persistConfig = {
   key: 'root',
   version: 1,
-  storage,
+  storage:storage,
 }
 
 const persistedReducer = persistReducer(persistConfig, appReducer)
