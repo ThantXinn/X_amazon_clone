@@ -32,7 +32,7 @@ const PaymentForm = () => {
   const stripePromise = loadStripe(config.nextPublicStripePublishableKey!);
   const handleCheckOut = async () => {
     const stripe = await stripePromise;
-    const res = await fetch(`${config.apiBaseUrl}checkout`, {
+    const res = await fetch(`${config.apiBaseUrl}/checkout`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
